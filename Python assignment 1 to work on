@@ -1,0 +1,124 @@
+# At the top of every file, always include the following information
+# Author(s) name:
+# Assignment: Week 1 Python Warmup
+# Date: August 1, 2015
+# 
+# Description: Methods to play with how Python represents color
+
+from random import randint
+import turtle
+
+turtle.colormode(255)  # by default, turtle graphics represents colors in range 0.0...1.0
+
+def exploreColors():
+  ''' A method that shows 4 colors '''
+  turtle.fillcolor(0, 255, 0)
+  turtle.begin_fill()
+  turtle.circle(50)
+  turtle.end_fill()
+
+  turtle.penup()
+  turtle.forward(100)
+  turtle.pendown()
+  turtle.fillcolor(100, 0, 70)
+  turtle.begin_fill()
+  turtle.circle(50)
+  turtle.end_fill()
+
+
+  turtle.penup()
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.left(90)
+  turtle.pendown()
+  turtle.fillcolor(255, 255, 255)
+  turtle.begin_fill()
+  turtle.circle(50)
+  turtle.end_fill()
+
+  turtle.penup()
+  turtle.backward(100)
+  turtle.pendown()
+  turtle.fillcolor(150, 150, 150)
+  turtle.begin_fill()
+  turtle.circle(50)
+  turtle.end_fill()
+
+
+def guessMyColor():
+  ''' A color guessing game.  The computer chooses a random color,
+    shows it to the user, and the user has to guess it'''
+  width = 200
+  height = 200
+  hiddenRed = randint(0, 255)
+  hiddenGreen = randint(0, 255)
+  hiddenBlue = randint(0, 255)
+  guessRed = input("Guess the red value: ")
+  guessGreen = input("Guess the green value: ")
+  guessBlue = input("Guess the blue value: ")
+
+  if (False):  # You will replace the "False" here
+    print "You got it!"
+  else:
+    print "You didn't get it"
+    print "My color was ("+str(hiddenRed)+","+str(hiddenGreen)+","+str(hiddenBlue)+")"
+  print "Here's a comparison"
+
+  turtle.fillcolor(hiddenRed, hiddenGreen, hiddenBlue)
+  turtle.begin_fill()
+  turtle.circle(100)
+  turtle.end_fill()
+
+  turtle.penup()
+  turtle.forward(200)
+  turtle.pendown()
+  turtle.fillcolor(guessRed, guessGreen, guessBlue)
+  turtle.begin_fill()
+  turtle.circle(100)
+  turtle.end_fill()
+
+    
+def dbl(x):
+    """ dbls x? """
+    return 2*x
+
+def dblPR(x):
+    """ dbls x? """
+    print 2*x
+
+def choice(x):
+    if x > 10:
+       print "A"
+    if x > 5:
+       print "B"
+       print "Hello"
+    if x > 0:
+       print "C"
+
+def choiceIfElse(x):
+    if x > 10:
+       print "A"
+    elif x > 5:
+       print "B"
+    else:
+       print "C"
+
+def choiceReturn(x):
+    if x > 10:
+       return "A"
+    if x > 5:
+       return "B"
+    if x > 0:
+       return "C"
+
+def recFun(num):
+    print num
+    num = num - 1
+    if num > 0:
+        recFun(num)
+        print num
+
+def recFun2(num):
+    if num != 0:
+        recFun2(num - 2)
+        print num
