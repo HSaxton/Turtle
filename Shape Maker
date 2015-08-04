@@ -1,0 +1,37 @@
+#There is an error with hexagons and pentagons as well with the accurateShape maker
+import random
+import turtle
+def lineMaker(length,degree):
+	turtle.forward(length)
+	turtle.left(degree)
+
+def shapeMaker (numsides, length, degree):
+	if numsides == 0: return
+	turtle.forward(length)
+	turtle.left (degree)
+	shapeMaker (numsides - 1, length, degree)
+	
+def accurateShape (numsides, sidelength):
+	bro = numsides
+	colorSelector()
+	turtle.begin_fill()
+	shapeMaker (numsides, sidelength, 180 - (((bro - 2)* 180) / bro ))
+	turtle.end_fill()
+	turtle.exitonclick()
+	
+def colorSelector():
+        billy = random.randint(1,7)
+        if billy == 1:
+                turtle.color ("red")
+        if billy == 2:
+                turtle.color ("orange")
+        if billy == 3:
+                turtle.color ("yellow")
+        if billy == 4:
+                turtle.color ("green")
+        if billy == 5:
+                turtle.color ("blue")
+        if billy == 6:
+                turtle.color ("purple")
+        if billy == 7:
+                turtle.color ("pink")
