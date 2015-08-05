@@ -70,7 +70,7 @@ def guessMyColor():
   else:
     print "Not even close :-("
     print "My color was ("+str(hiddenRed)+","+str(hiddenGreen)+","+str(hiddenBlue)+")"
-  print "Here's your disaster."
+    print "Here's your disaster."
 
   
   turtle.penup()
@@ -80,7 +80,7 @@ def guessMyColor():
   turtle.begin_fill()
   turtle.circle(100)
   turtle.end_fill()
-  turtle.exitonclick()
+  #turtle.exitonclick()
   
 
     # End of guessMyColor()
