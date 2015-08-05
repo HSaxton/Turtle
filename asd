@@ -66,20 +66,18 @@ def guessMyColor():
   if (hiddenRed - 500 <= guessRed <= hiddenRed + 500) and (hiddenBlue - 500 <= guessBlue <= hiddenBlue + 500) and (hiddenGreen - 500 <= guessGreen <= hiddenGreen + 500):  # You will replace the "False" here
     print "You got it...Or you were close, at least. Have a reward, drag the turtle around and click to change colors!"
     turtle.ondrag(turtle.goto)
-    turtle.onclick(turtle.fillcolor(randint(0, 255),randint(0, 255),randint(0, 255)))
+    turtle.onclick(turtle.color(randint(0, 255),randint(0, 255),randint(0, 255)))
   else:
     print "Not even close :-("
     print "My color was ("+str(hiddenRed)+","+str(hiddenGreen)+","+str(hiddenBlue)+")"
     print "Here's your disaster."
-
-  
-  turtle.penup()
-  turtle.forward(200)
-  turtle.pendown()
-  turtle.fillcolor(guessRed, guessGreen, guessBlue)
-  turtle.begin_fill()
-  turtle.circle(100)
-  turtle.end_fill()
+    turtle.penup()
+    turtle.forward(200)
+    turtle.pendown()
+    turtle.fillcolor(guessRed, guessGreen, guessBlue)
+    turtle.begin_fill()
+    turtle.circle(100)
+    turtle.end_fill()
   #turtle.exitonclick()
   
 
